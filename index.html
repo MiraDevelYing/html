@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div id="Logo" onclick="slowScroll('#top')">
+            <span>Lesson</span>
+        </div>
+    <div id="about">
+        <a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+        <a href="#" onclick="slowScroll('#overview')" title="Уроки">Уроки</a>
+        <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+        <a href="#" onclick="slowScroll('#fag')" title="Ответы на вопросы">Fag</a>
+    </div>
+    </header>
+    <div id="top">
+        <h1>Обучение</h1>
+        <h3>как смысл жизни</h3>
+    </div>
+    <div id="main">
+        <div class="intro">
+            <h2>Мы поможем вам поднять ваши знания на новый уровень!</h2>
+            <span></span>
+        </div>
+        <div class="text">
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sapiente, laudantium blanditiis dolore fuga eum provident nobis recusandae, aliquid nesciunt odio! Voluptas consequatur ab sapiente ut inventore magnam corporis provident.</span>
+        </div>
+        
+    </div>
+    <div id="overview">
+        <h2>Уроки</h2>
+        <h4>Рекомендации</h4>
+        <div class="img">
+            <img src="https://itproger.com/img/courses/1532975967.jpg" alt="">
+            <span>Изучение языка Ruby для начинающих</span>
+          </div>
+          <div class="img">
+            <img src="https://itproger.com/img/courses/1530341233.jpg" alt="">
+            <span>Уроки PhotoShop для начинающих</span>
+          </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+        }
+        
+        $(document).on("scroll", function(){
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+            $("header").attr("class", "fixed");
+
+        });
+    </script>
+</body>    
+</html>
